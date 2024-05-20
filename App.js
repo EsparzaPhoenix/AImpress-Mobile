@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-export default function App() {
+import { Authenticator } from './src/context/Authenticator';
+import Home from './src/screens/Home';
+import Cadastro from './src/screens/Cadastro';
+import Login from './src/screens/Login';
+import ResetPassword from './src/screens/ResetPassword';
+
+
+const Tab = createBottomTabNavigator();
+
+function MyTab() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Tab.Navigator initialRouteName="Home">
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Cadastro" component={Cadastro} />
+      <Tab.Screen name="Login" component={Login} />
+      <Tab.Screen name="ResetPassword" component={ResetPassword} />
+    </Tab.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+    <Authenticator>
+      <NavigationContainer>
+        <MyTab />
+      </NavigationContainer>
+    </Authenticator>
+  );
+}
