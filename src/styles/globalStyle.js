@@ -60,7 +60,12 @@ export default StyleSheet.create({
     color: '#007BFF',
     textDecorationLine: 'underline',
   },
-
+  projectName: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    marginBottom: 40,
+    color: '#000000',
+  },
   // Specific screen styles
   onboardingContainer: {
     flex: 1,

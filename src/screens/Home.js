@@ -1,34 +1,28 @@
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import globalStyle from '../styles/globalStyle';
 
-const Home = ({ navigation }) => {
+
+const Home = () => {
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Olá Mundo!</Text>
-      <Button
-        title="Login"
+    <View style={globalStyle.container}>
+      <Text style={globalStyle.projectName}>AImpress</Text>
+      <TouchableOpacity 
+        style={globalStyle.button} 
         onPress={() => navigation.navigate('Login')}
-      />
-      <Button
-        title="Cadastrar"
+      >
+        <Text style={globalStyle.buttonText}>Login</Text>
+      </TouchableOpacity>
+      <TouchableOpacity 
+        style={globalStyle.button} 
         onPress={() => navigation.navigate('Cadastro')}
-      />
+      >
+        <Text style={globalStyle.buttonText}>Cadastrar</Text>
+      </TouchableOpacity>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'green',
-  },
-  text: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    color: 'white',
-  },
-});
 
 export default Home;
