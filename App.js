@@ -7,6 +7,7 @@ import Cadastro from './src/screens/Cadastro';
 import Login from './src/screens/Login';
 import ResetPassword from './src/screens/ResetPassword';
 import Onboarding from './src/screens/Onboarding';
+import MenuScreen from './src/screens/MenuScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -19,6 +20,7 @@ function MyTab() {
       <Tab.Screen name="Login" component={Login} />
       <Tab.Screen name="ResetPassword" component={ResetPassword} />
       <Tab.Screen name="Onboarding" component={Onboarding} />
+      <Tab.Screen name="MenuScreen" component={MenuScreen} />
     </Tab.Navigator>
   );
 }

@@ -7,22 +7,28 @@ const Onboarding = () => {
   const navigation = useNavigation();
 
   return (
-    <Swiper style={styles.wrapper} showsButtons={false} dotStyle={styles.dot} activeDotStyle={styles.activeDot}>
+    <Swiper
+      style={styles.wrapper}
+      showsButtons={false}
+      dotStyle={styles.dot}
+      activeDotStyle={styles.activeDot}
+      loop={false}  
+    >
       <View style={styles.slide}>
         <Text style={styles.text}>Crie um currículo profissional de maneira rápida e fácil</Text>
-        <TouchableOpacity style={styles.skipButton} onPress={() => navigation.navigate('Home')}>
+        <TouchableOpacity style={styles.skipButton} onPress={() => navigation.navigate('MenuScreen')}>
           <Text style={styles.skipButtonText}>Pular</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.slide}>
         <Text style={styles.text}>Compartilhe suas informações ou conecte-se ao LinkedIn</Text>
-        <TouchableOpacity style={styles.skipButton} onPress={() => navigation.navigate('Home')}>
+        <TouchableOpacity style={styles.skipButton} onPress={() => navigation.navigate('MenuScreen')}>
           <Text style={styles.skipButtonText}>Pular</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.slide}>
         <Text style={styles.text}>Revise e ajuste seu currículo conforme desejar</Text>
-        <TouchableOpacity style={styles.skipButton} onPress={() => navigation.navigate('Home')}>
+        <TouchableOpacity style={styles.skipButton} onPress={() => navigation.navigate('MenuScreen')}>
           <Text style={styles.skipButtonText}>Pular</Text>
         </TouchableOpacity>
       </View>

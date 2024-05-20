@@ -18,7 +18,7 @@ const Login = ({ navigation }) => {
                 setSuccessMessage("Login realizado com sucesso!");
                 setTimeout(() => {
                     setSuccessMessage('');
-                    navigation.navigate('Onboarding'); // Navegar para a tela Home ou outra tela após o login
+                    navigation.navigate('Onboarding'); 
                 }, 3000);
             })
             .catch((error) => {
